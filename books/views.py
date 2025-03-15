@@ -6,8 +6,15 @@ from .models import Book
 
 class BookListView(generic.ListView):
     model = Book
-    template_name = 'book/book_list.html'
+    template_name = 'books/book_list.html'
     context_object_name = 'books'
+
+
+class BookDetailView(generic.DetailView):
+    model = Book
+    template_name = 'books/book_detail.html'
+
+
 
 
 # Create your views here.
