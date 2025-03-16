@@ -6,6 +6,8 @@
     <p> {{ book.author }}</p>
     <h4> {{ book.price }}</h4>
     <br>
+    <a href="{% url 'book_update' book.id %}"> <button class= 'btn btn-info' type ='button'> Edit</button></a>
+    <br>
     <a href="{% url 'book_list' %}"> List of all books</a>
 
 {% endblock content %}
