@@ -12,7 +12,7 @@ class Book(models.Model):
         return f'{self.title}:{self.author}'
 
     def get_absolute_url(self):
-        return reverse ('book_detail' , args=[self.id])
+        return reverse('book_detail', args=[self.id])
 
 
 # Create your models here.
