@@ -33,8 +33,10 @@
             </div>
         </div>
         <div class="mx-2 text-white">
-            {% if user.isauthenticated %}
-               {{user.username}} |خوش آمدی <a class="link-light text-decoration-none" href=" {% url 'logout' %}">خروج</a>
+            {% if user.is_authenticated %}
+                <p>{{user.username}} خوش آمدی: <form method="POST" action="{% url 'logout' %}"> {% csrf_token %}  <button type="submit">logout</button>
+
+            </form>
                 {% else %}
                 <a class="link-light text-decoration-none" href="{% url 'login' %}"> ورود</a>
                 <span> یا </span>
