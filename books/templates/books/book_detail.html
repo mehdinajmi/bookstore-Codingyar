@@ -22,9 +22,13 @@
                         <h1> {{ book.title }}</h1>
                         <h5 class="small my-1"><span class="text-muted">نویسنده: </span>{{ book.author }}</h5>
                         <h5 class="small my-1"><span class="text-muted">ایحادکننده: </span>{{ book.user.username }}</h5>
+                        {% if book.user == user %}
                         <a href="{% url 'book_update' book.id %}"> ویرایش </a>
+                        {% endif %}
                        <span> |</span>
+                        {% if book.user == user %}
                          <a href="{% url 'book_delete' book.id %}"> حذف </a>
+                        {% endif %}
 {#                        <h5 class="small my-1"><span class="text-muted">مترجم: </span>الهام خرسندی</h5>#}
 {#                        <h5 class="small my-1"><span class="text-muted">انتشارات: </span>هوزمزد</h5>#}
                     </div>
